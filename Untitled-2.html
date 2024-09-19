@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-UTF">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financiera - IntelliCloud</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" as="style">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Calculadora Financiera</h1>
+            <ul>
+                <li><a href="#van-tir">VAN & TIR</a></li>
+                <li><a href="#intereses">Intereses</a></li>
+                <li><a href="#cuotas">Cuotas</a></li>
+                <li><a href="#tasas-descuento">Tasas de Descuento</a></li>
+                <li><a href="#sistemas-financieros">Sistemas Financieros</a></li>
+                <li><a href="#indices-precios">Índices de Precios</a></li>
+                <li><a href="#descargas">Descargas</a></li>
+                <li><a href="#graficos">Gráficos</a></li>
+                <li><a href="#auth-2fa">2FA</a></li>
+                <li><a href="#gestion-proyectos">Proyectos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección VAN & TIR -->
+        <section id="van-tir" class="section-calculator">
+            <h2>Calculadora de VAN & TIR</h2>
+            <div class="input-group">
+                <label for="capital-van-tir">Capital (inicial):</label>
+                <input type="number" id="capital-van-tir" required>
+                <span class="error-message" id="error-capital-van-tir"></span>
+            </div>
+            <div class="input-group">
+                <label for="tasa-van-tir">Tasa de Interés (%):</label>
+                <input type="number" id="tasa-van-tir" required>
+                <span class="error-message" id="error-tasa-van-tir"></span>
+            </div>
+            <div class="input-group">
+                <label for="flujos-de-caja-van-tir">Flujos de Caja (separados por comas):</label>
+                <input type="text" id="flujos-de-caja-van-tir" required>
+                <span class="error-message" id="error-flujos-van-tir"></span>
+            </div>
+            <button id="calcular-van-tir" class="btn-primary">Calcular VAN & TIR</button>
+            <div id="resultados-van-tir" class="result-box">
+                <p>VAN (Valor Actual Neto): <span id="resultado-van"></span></p>
+                <p>TIR (Tasa Interna de Retorno): <span id="resultado-tir"></span></p>
+            </div>
+        </section>
+
+        <!-- Sección para Sugerencias de Estrategias -->
+        <section id="sugerencias">
+            <h2>Sugerencias de Estrategias Financieras y de Marketing</h2>
+            <div id="sugerencias-estrategias">
+                <!-- Aquí se mostrarán las sugerencias según el VAN y la TIR -->
+            </div>
+        </section>
+
+        <!-- Sección Descargas -->
+        <section id="descargas">
+            <h2>Descargas de Informes</h2>
+            <button id="descargar-pdf" class="btn-primary">Descargar Informe en PDF</button>
+            <button id="descargar-excel" class="btn-primary">Descargar Informe en Excel</button>
+        </section>
+
+        <!-- Sección Gráficos -->
+        <section id="graficos">
+            <h2>Gráficos de Resultados</h2>
+            <canvas id="grafico-resultados"></canvas>
+            <button id="generar-grafico" class="btn-primary">Generar Gráfico</button>
+        </section>
+
+        <!-- Sección 2FA -->
+        <section id="auth-2fa">
+            <h2>Autenticación de Dos Factores (2FA)</h2>
+            <button id="activar-2fa" class="btn-primary">Activar 2FA</button>
+        </section>
+
+        <!-- Sección Gestión de Proyectos -->
+        <section id="gestion-proyectos">
+            <h2>Gestión de Proyectos</h2>
+            <button id="guardar-proyecto" class="btn-primary">Guardar Proyecto</button>
+            <button id="mostrar-proyectos" class="btn-primary">Mostrar Proyectos Guardados</button>
+            <ul id="lista-proyectos"></ul>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js" defer></script>
+</body>
+</html>
